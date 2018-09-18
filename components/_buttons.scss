@@ -1,0 +1,48 @@
+.error-btn {
+    @include button(red, 100px);
+}
+
+.success-btn {
+    @include button(#bada55, 200px);
+}
+
+.dark-btn {
+    @include button(black, 100px);
+    @include mobile {
+        background-color: #7f83c4;
+    }
+    @include tablet {
+        background-color: #7fc49b;
+    }
+}
+
+.error-btn-lg {
+    @include button(red, 200px);
+}
+
+.success-btn-lg {
+    @include button(#bada55, 400px);
+}
+
+.dark-btn-lg {
+    @include button(black, 200px);
+}
+
+@for $i from 1 through 4 {
+    $banana: black;
+    .btn-#{$i} {
+        @if $i == 1 {
+            $banana: red;
+        }
+        @else if $i == 2 {
+            $banana: blue;
+        }
+        @else if $i == 3 {
+            $banana: green;
+        }
+        @else {
+            $banana: lemonchiffon;
+        }
+        @include button($banana, 100px);
+    }
+}
